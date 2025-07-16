@@ -10,6 +10,7 @@
             background-color: black;
             color: orange;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -17,12 +18,36 @@
         h1 {
             font-family: Arial, sans-serif;
             font-size: 3rem;
-            text-align: center;
-            margin: 0;
+            margin: 0 0 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 1rem;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: orange;
+            color: black;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>UNPLANNED HANGOUTS</h1>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="checkPassword()">Enter</button>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === 'bunny') {
+                window.location.href = 'main.html';
+            } else {
+                alert('Incorrect password.');
+            }
+        }
+    </script>
 </body>
 </html>
